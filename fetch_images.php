@@ -10,22 +10,20 @@ if (empty($images)) {
     exit;
 }
 
+// Loop through images
 foreach ($images as $image) {
     $fileName = basename($image);
 
-    // Check if filename contains an underscore before extracting category
-    if (strpos($fileName, '_') !== false) {
-        $category = explode('_', $fileName)[0];
-    } else {
-        $category = 'filter-books'; // Default category if no underscore is found
-    }
+    // Extract category from filename if underscore exists
+    $category = (strpos($fileName, '_') !== false) ? explode('_', $fileName)[0] : 'filter-books';
 
-    // Ensure category exists in the predefined list
+    // Validate category against allowed list
     if (!in_array($category, $categories)) {
-        $category = 'filter-books'; // Default category if not found in allowed categories
+        $category = 'filter-books';
     }
     ?>
-
+    
+    <!-- Ensure this part is outside PHP -->
     <div class="col-lg-4 col-md-6 portfolio-item isotope-item <?= htmlspecialchars($category) ?>">
         <div class="portfolio-content h-100">
             <img src="<?= htmlspecialchars($image) ?>" class="img-fluid" alt="Uploaded Image">
@@ -39,5 +37,5 @@ foreach ($images as $image) {
     </div>
 
     <?php
-}
+} // End of foreach loop
 ?>
