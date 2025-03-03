@@ -36,7 +36,7 @@
 
         <!-- Main CSS File -->
         <link href="assets/css/main.css" rel="stylesheet">
-
+        <script defer src="upload.js"></script>
         <!-- =======================================================
   * Template Name: iPortfolio https://github.com/Dave123345/assetss/blob/main/css/main.css
   * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
@@ -61,6 +61,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="">
             </div>
+            
         
             <script>
                 document.addEventListener("DOMContentLoaded", function () {
@@ -156,7 +157,7 @@
 
                 <div class="container" data-aos="fade-up" data-aos-delay="100">
                     <h2>Ian Dave Lemera</h2>
-                    <p>I'm <span class="typed"
+                    <p>I'm a <span class="typed"
                             data-typed-items="Developer">Developer</span><span
                             class="typed-cursor typed-cursor--blink"
                             aria-hidden="true"></span><span
@@ -535,102 +536,130 @@
             <!-- /Resume Section -->
 
             <!-- Portfolio Section -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <section id="portfolio" class="portfolio section light-background">
-
-                <!-- Section Title -->
                 <div class="container section-title" data-aos="fade-up">
                     <h2>Portfolio</h2>
-
-                    <?php if ($isLoggedIn): ?>
-                    <div class="container">
-                        <form action="upload.php" method="POST"
-                            enctype="multipart/form-data" class="mb-4">
+            
+                    <!-- Upload Form -->
+                    <!-- <div class="container">
+                        <form id="uploadForm" enctype="multipart/form-data">
                             <input type="file" name="image" required>
                             <select name="category" required>
-                                <option value="filter-app">Start-Up
-                                    Pitching</option>
-                                <option value="filter-product">Hack For
-                                    Gov</option>
-                                <option value="filter-branding">Web
-                                    Development</option>
+                                <option value="filter-app">Start-Up Pitching</option>
+                                <option value="filter-product">Hack For Gov</option>
+                                <option value="filter-branding">Web Development</option>
                                 <option value="filter-books">Others</option>
                             </select>
-                            <input type="submit" name="upload"
-                                value="Upload Image" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary">Upload</button>
                         </form>
+                        <div id="uploadStatus" class="mt-2"></div> 
+                       
+                    </div> -->
+
+                    <div id="uploadContainer" style="display: none;">
+                        <div class="container">
+                            <form id="uploadForm" enctype="multipart/form-data">
+                                <input type="file" name="image" required>
+                                <select name="category" required>
+                                    <option value="filter-app">Start-Up Pitching</option>
+                                    <option value="filter-product">Hack For Gov</option>
+                                    <option value="filter-branding">Web Development</option>
+                                    <option value="filter-books">Others</option>
+                                </select>
+                                <button type="submit" class="btn btn-primary">Upload</button>
+                            </form>
+                            <div id="uploadStatus" class="mt-2"></div> 
+                        </div>
                     </div>
-                    <?php endif; ?>
-
-                    <p>Showcasing my projects and achievements, including
-                        Start-Up Pitching, Hack for Gov competitions, Web
-                        Development projects, and other innovations that
-                        contribute to the community.</p>
-
+                    
+            
+                    <p>Showcasing my projects and achievements, including Start-Up Pitching, Hack for Gov competitions, Web Development projects, and other innovations that contribute to the community.</p>
                 </div>
-
+            
+                <!-- Portfolio Gallery -->
                 <div class="container">
-                    <div class="isotope-layout" data-default-filter="*"
-                        data-layout="masonry" data-sort="original-order">
-                        <ul class="portfolio-filters isotope-filters"
-                            data-aos="fade-up" data-aos-delay="100">
+                    <div class="isotope-layout">
+                        <!-- Filter Buttons -->
+                        <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
                             <li data-filter="*" class="filter-active">All</li>
                             <li data-filter=".filter-app">Start-Up Pitching</li>
                             <li data-filter=".filter-product">Hack For Gov</li>
-                            <li data-filter=".filter-branding">Web
-                                Development</li>
+                            <li data-filter=".filter-branding">Web Development</li>
                             <li data-filter=".filter-books">Others</li>
                         </ul>
-
-                        <div class="row gy-4 isotope-container"
-                            data-aos="fade-up" data-aos-delay="200">
-                            <!-- Dynamically Inserted Images -->
-                            <?php
-                            $uploadDir = 'uploads/';
-                            $categories = ['filter-app', 'filter-product',
-                            'filter-branding', 'filter-books'];
-
-                            $images = glob($uploadDir . '*.{jpg,jpeg,png,gif}',
-                            GLOB_BRACE);
-                            ?>
-
-                            <div class="row gy-4 isotope-container"
-                                data-aos="fade-up" data-aos-delay="200">
-                                <?php foreach ($images as $image): ?>
-                                <?php
-                                // Extract category from filename
-                                $fileName = basename($image);
-                                $category = explode('_', $fileName)[0]; // Get
-                                category prefix
-                                if (!in_array($category, $categories)) $category
-                                = 'filter-books'; // Default category
-                                ?>
-                                <div
-                                    class="col-lg-4 col-md-6 portfolio-item isotope-item <?php echo htmlspecialchars($category); ?>">
-                                    <div class="portfolio-content h-100">
-                                        <img
-                                            src="<?php echo htmlspecialchars($image); ?>"
-                                            class="img-fluid"
-                                            alt="Uploaded Image">
-                                        <div class="portfolio-info">
-                                            <h4>Uploaded Image</h4>
-                                            <a
-                                                href="<?php echo htmlspecialchars($image); ?>"
-                                                title="View Image"
-                                                data-gallery="portfolio-gallery"
-                                                class="glightbox preview-link">
-                                                <i class="bi bi-zoom-in"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <?php endforeach; ?>
-                            </div>
-
+            
+                        <!-- Dynamic Image Gallery -->
+                        <div class="row gy-4 isotope-container" id="portfolio-gallery" data-aos="fade-up" data-aos-delay="200">
+                            <!-- Images will be dynamically loaded here via AJAX -->
                         </div>
                     </div>
                 </div>
             </section>
+            
+            <!-- jQuery & Isotope Script -->
+            <script>
+            $(document).ready(function () {
+                // Initialize Isotope
+                var $grid = $('.isotope-container').isotope({
+                    itemSelector: '.portfolio-item',
+                    layoutMode: 'fitRows'
+                });
+            
+                function loadImages() {
+                    $.ajax({
+                        url: "fetch_images.php",
+                        type: "GET",
+                        success: function (data) {
+                            $("#portfolio-gallery").html(data); // Insert images
+                            $grid.isotope('reloadItems').isotope(); // Refresh Isotope
+                        },
+                        error: function () {
+                            $("#portfolio-gallery").html('<p class="text-danger">Failed to load images.</p>');
+                        }
+                    });
+                }
+            
+                // Filter Click Event
+                $('.portfolio-filters li').click(function () {
+                    $('.portfolio-filters li').removeClass('filter-active');
+                    $(this).addClass('filter-active');
+                    var filterValue = $(this).attr('data-filter');
+                    $grid.isotope({ filter: filterValue });
+                });
+            
+                // Handle File Upload
+                $("#uploadForm").submit(function (e) {
+                    e.preventDefault();
+                    var formData = new FormData(this);
+            
+                    $.ajax({
+                        url: "upload.php",
+                        type: "POST",
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        dataType: "json",
+                        success: function (response) {
+                            if (response.status === "success") {
+                                $("#uploadStatus").html('<p class="text-success">' + response.message + '</p>');
+                                loadImages(); // Reload images
+                            } else {
+                                $("#uploadStatus").html('<p class="text-danger">' + response.message + '</p>');
+                            }
+                        },
+                        error: function () {
+                            $("#uploadStatus").html('<p class="text-danger">AJAX error. Try again.</p>');
+                        }
+                    });
+                });
+            
+                loadImages(); // Load images on page load
+            });
+            </script>
+            
 
+            
             <!-- /Portfolio Section -->
 
             <!-- Services Section -->
@@ -877,6 +906,16 @@
         </div>
     </div>
 
+    <div class="profile-img">
+        <img id="profileImage"
+            src="assets/img/default-profile.jpg"
+            alt="Profile Image"
+            class="img-fluid rounded-circle"
+            style="cursor: pointer;"
+            data-bs-toggle="modal"
+            data-bs-target="#updateProfileModal">
+    </div>
+    
     <!-- Update Profile Modal -->
     <div class="modal fade" id="updateProfileModal" tabindex="-1" aria-labelledby="updateProfileModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -902,85 +941,80 @@
             </div>
         </div>
     </div>
-
-    <!-- Profile Image -->
-    <div class="profile-img mt-4 text-center">
-        <img id="profileImage"
-            src="assets/img/default-profile.jpg"
-            alt="Profile Image"
-            class="img-fluid rounded-circle"
-            style="cursor: pointer; width: 100px; height: 100px;"
-            data-bs-toggle="modal"
-            data-bs-target="">
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-            let username = localStorage.getItem("username") || "";
-            let profileImage = localStorage.getItem("profileImage") || "assets/img/default-profile.jpg";
-
-            let profileImageElem = document.getElementById("profileImage");
-
-            // Set profile image
-            profileImageElem.src = profileImage;
-            profileImageElem.setAttribute("data-bs-target", isLoggedIn ? "#updateProfileModal" : "#loginModal");
-
-            // Show username in update modal if logged in
-            if (isLoggedIn) {
-                document.getElementById("updateUsername").value = username;
-            }
-        });
-
-        // Login Form
-        // Login Form
-document.getElementById("loginForm").addEventListener("submit", function (event) {
-    event.preventDefault();
     
-    let username = document.getElementById("username").value.trim();
-    let password = document.getElementById("password").value.trim();
-
-    if (username === "iandavelemera" && password === "dave142002") {
-        localStorage.setItem("isLoggedIn", "true");
-        localStorage.setItem("username", username);
-        alert("Login successful!");
-        window.location.reload();
-    } else {
-        alert("Invalid username or password!");
-    }
-});
-
-
-        // Update Profile Form
-        document.getElementById("updateProfileForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-            let fileInput = document.getElementById("profileImageUpload");
-            let profileImageElem = document.getElementById("profileImage");
-
-            if (fileInput.files.length > 0) {
-                let file = fileInput.files[0];
-                let reader = new FileReader();
-
-                reader.onload = function (e) {
-                    let imageData = e.target.result;
-                    localStorage.setItem("profileImage", imageData);
-                    profileImageElem.src = imageData;
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let userData = JSON.parse(localStorage.getItem("userData")) || {
+            isLoggedIn: false,
+            username: "",
+            profileImage: "assets/img/default-profile.jpg" // Default profile image
+        };
+    
+        let profileImageElem = document.getElementById("profileImage");
+        let updateUsernameElem = document.getElementById("updateUsername");
+    
+        // Ensure the saved image is loaded correctly on refresh
+        if (userData.profileImage) {
+            profileImageElem.src = userData.profileImage;
+        }
+    
+        // Pre-fill username in modal if logged in
+        if (userData.isLoggedIn && updateUsernameElem) {
+            updateUsernameElem.value = userData.username;
+        }
+    });
+    
+    // Update Profile Form (Upload Image with Username as Filename)
+    document.getElementById("updateProfileForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        let fileInput = document.getElementById("profileImageUpload");
+        let profileImageElem = document.getElementById("profileImage");
+    
+        let userData = JSON.parse(localStorage.getItem("userData")) || {};
+        let username = userData.username || "defaultUser"; // Fallback username if empty
+    
+        if (fileInput.files.length > 0) {
+            let formData = new FormData();
+            formData.append("profileImage", fileInput.files[0]);
+            formData.append("username", username); // Send username to backend
+    
+            fetch("uploads.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    let imagePath = `uploads/${username}.jpg`; // Assuming the backend saves it as .jpg
+    
+                    // Store in localStorage to persist after refresh
+                    userData.profileImage = imagePath;
+                    localStorage.setItem("userData", JSON.stringify(userData));
+    
+                    // Update profile image instantly
+                    profileImageElem.src = imagePath;
                     alert("Profile updated successfully!");
-                };
-
-                reader.readAsDataURL(file);
-            }
-        });
-
-        // Logout Button
-        document.getElementById("logoutBtn").addEventListener("click", function () {
-            localStorage.removeItem("isLoggedIn");
-            localStorage.removeItem("username");
-            localStorage.removeItem("profileImage");
-            alert("Logged out successfully!");
-            window.location.reload();
-        });
+                } else {
+                    alert("Error: " + data.error);
+                }
+            })
+            .catch(error => console.error("Error uploading image:", error));
+        } else {
+            alert("Please select an image to upload.");
+        }
+    });
+    
+    // Logout Button
+    document.getElementById("logoutBtn").addEventListener("click", function () {
+        localStorage.removeItem("userData");
+        alert("Logged out successfully!");
+        window.location.reload();
+    });
     </script>
+    
+    
+    
+    
 
 
 

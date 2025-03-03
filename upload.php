@@ -1,29 +1,48 @@
 <?php
+header('Content-Type: application/json'); // Ensure response is JSON
+
 $uploadDir = 'uploads/'; // Directory to store uploaded images
 
-if (isset($_POST['upload'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ensure the uploads directory exists
     if (!is_dir($uploadDir)) {
         mkdir($uploadDir, 0777, true);
     }
 
-    $category = $_POST['category']; // Get the selected category
-    $file = $_FILES['image'];
+    if (!empty($_FILES['image']['name']) && !empty($_POST['category'])) {
+        $category = preg_replace('/[^a-z0-9-]/', '', $_POST['category']); // Sanitize category
+        $file = $_FILES['image'];
+        $fileExt = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
 
-    if ($file['error'] === UPLOAD_ERR_OK) {
-        $fileExt = pathinfo($file['name'], PATHINFO_EXTENSION);
-        $uniqueName = uniqid($category . '_', true) . '.' . $fileExt; // Generate unique filename
-        $targetFilePath = $uploadDir . $uniqueName;
+        // Allowed file types
+        $allowedTypes = ["jpg", "jpeg", "png", "gif"];
 
-        if (move_uploaded_file($file['tmp_name'], $targetFilePath)) {
-            echo "<script>alert('Image uploaded successfully!'); window.location.href='index.php';</script>";
+        if (in_array($fileExt, $allowedTypes)) {
+            if ($file['error'] === UPLOAD_ERR_OK) {
+                $uniqueName = uniqid($category . '_', true) . '.' . $fileExt; // Unique filename
+                $targetFilePath = $uploadDir . $uniqueName;
+
+                if (move_uploaded_file($file['tmp_name'], $targetFilePath)) {
+                    echo json_encode(["status" => "success", "message" => "Image uploaded successfully!", "image" => $targetFilePath]);
+                    exit;
+                } else {
+                    echo json_encode(["status" => "error", "message" => "Error uploading image."]);
+                    exit;
+                }
+            } else {
+                echo json_encode(["status" => "error", "message" => "File upload error."]);
+                exit;
+            }
         } else {
-            echo "<script>alert('Error uploading image. Please try again.'); window.history.back();</script>";
+            echo json_encode(["status" => "error", "message" => "Invalid file type. Allowed: JPG, JPEG, PNG, GIF."]);
+            exit;
         }
     } else {
-        echo "<script>alert('File upload error. Please try again.'); window.history.back();</script>";
+        echo json_encode(["status" => "error", "message" => "Please select a file and category."]);
+        exit;
     }
 } else {
-    echo "<script>alert('Invalid request.'); window.history.back();</script>";
+    echo json_encode(["status" => "error", "message" => "Invalid request."]);
+    exit;
 }
 ?>
