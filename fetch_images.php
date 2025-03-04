@@ -5,10 +5,9 @@ ini_set('display_errors', 1);
 $uploadDir = 'uploads/'; // Folder where images are stored
 $categories = ['filter-app', 'filter-product', 'filter-branding', 'filter-books'];
 
-// Check if upload directory exists
+// Check if upload directory exists, if not create it
 if (!is_dir($uploadDir)) {
-    echo '<p class="text-center text-danger">Error: Upload directory does not exist.</p>';
-    exit;
+    mkdir($uploadDir, 0755, true); // Create directory with correct permissions
 }
 
 // Get all image files from the directory
