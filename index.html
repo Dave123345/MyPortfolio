@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dave's Portfolio</title>
+    <link rel="icon" type="image/png" href="public/images/fovicon.png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="public/styles.css">
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold d-none d-lg-block" href="#">
+            <img src="logo.png" alt="Logo" class="logo-circle">
+            <span style="color: #eb3461;">DAVE</span><span style="color: #3ebdf0;">PROJECT</span>
+        </a>
+        <div class="nav-container">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#experience">Relevant Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="#achievements">Certifications</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Home Section -->
+<section id="home">
+    <div class="container mt-5" id="home">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-white about">
+                <h1>HI, I'M <span style="color: #ff5b84;">IAN DAVE LEMERA</span></h1>
+                <h4>Passionate <span style="color: #ff5b84;">Web Developer</span> & <span style="color: #3ebdf0;">Enthusiast</span></h4>
+                <p>I enjoy building intuitive and engaging web applications that enhance user experiences. I'm continuously learning and improving my skills, excited to grow and contribute to meaningful projects.</p>
+                <div class="d-flex align-items-center">
+                    <a target="_blank" href="public/images/IanDaveLemeraResume.pdf" class="button">Resume</a>
+                    <div class="socials-container">
+                        <a data-social="GitHub" target="_blank" style="--accent-color: black;" href="https://github.com/Dave123345">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <title>GitHub</title>
+                                <path d="M12 0C5.372 0 0 5.373 0 12c0 5.304 3.438 9.801 8.207 11.385.6.11.82-.26.82-.577v-2.012c-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.332-1.757-1.332-1.757-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.24 1.84 1.24 1.07 1.832 2.806 1.303 3.49.995.108-.776.42-1.304.762-1.603-2.664-.304-5.466-1.333-5.466-5.932 0-1.31.47-2.38 1.24-3.22-.124-.303-.537-1.523.116-3.174 0 0 1.008-.322 3.3 1.23.96-.267 1.99-.4 3.01-.405 1.02.005 2.05.138 3.01.405 2.29-1.552 3.3-1.23 3.3-1.23.654 1.65.24 2.87.118 3.174.77.84 1.238 1.91 1.238 3.22 0 4.61-2.804 5.625-5.476 5.92.43.372.81 1.1.81 2.22v3.293c0 .32.22.693.826.577C20.566 21.798 24 17.304 24 12c0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+                        <a data-social="Facebook" target="_blank" style="--accent-color: #106bff;" href="https://www.facebook.com/aindavel">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <title>Facebook</title>
+                                <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-6 d-flex justify-content-end d-none d-lg-flex">
+                <div class="cards">
+                    <img src="profiles.jpg" alt="Profile Image" class="profile-img">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Moving Icons Section -->
+<div class="skills-container">
+    <div class="skills-slider">
+        <i class="fab fa-js fa-3x" title="JavaScript"></i>
+        <i class="fab fa-php fa-3x" title="PHP"></i>
+        <i class="fab fa-bootstrap fa-3x" title="Bootstrap"></i>
+        <i class="fas fa-database fa-3x" title="MySQL"></i>
+        <i class="fas fa-code fa-3x" title="VS Code"></i>
+        <i class="fab fa-github fa-3x" title="GitHub"></i>
+        <i class="fas fa-server fa-3x" title="XAMPP"></i>
+        <i class="fab fa-git fa-3x" title="Git"></i>
+        <i class="fab fa-laravel fa-3x" title="Laravel"></i>
+    </div>
+</div>
+
+<section id="about">
+    <!-- About Me Section -->
+    <div class="container mt-5" id="about">
+        <div class="row align-items-center ">
+            <div class="col-lg-4 d-flex justify-content-center mb-4 mb-lg-0">
+                <div class="card-about">
+                    <img src="profiles.jpg" alt="Profile Image" class="profile-about">
+                </div>
+            </div>
+            <div class="col-lg-8 text-white about">
+                <h2 class="fw-bold text-white text-center">About Me</h2>
+                <p class="lead">
+                    I am <span style="color: #ff5b84;">Ian Dave Lemera</span>, a fresh graduate with a Bachelor of Science in Information Technology. Passionate about web development.
+                </p>
+
+                <div class="row">
+                    <!-- Skills Section (Left Side) -->
+                    <div class="col-md-6">
+                        <h3 class="mt-4" style="color: #3ebdf0;">Skills</h3>
+                        <ul class="list-unstyled">
+                            <li><i class="material-icons" style="color: #3ebdf0;">computer</i> Web Development (JavaScript, Bootstrap, Laravel)</li>
+                            <li><i class="material-icons" style="color: #3ebdf0;">storage</i> Database Management (MySQL)</li>
+                            <li><i class="material-icons" style="color: #3ebdf0;">link</i> Version Control (Git, GitHub)</li>
+                            <li><i class="material-icons" style="color: #3ebdf0;">psychology</i> Problem-Solving & Debugging</li>
+                        </ul>
+                    </div>
+
+                    <!-- Interests Section (Right Side) -->
+                    <div class="col-md-6">
+                        <h3 class="mt-4" style="color: #ff5b84;">Interests</h3>
+                        <ul class="list-unstyled">
+                            <li><i class="material-icons" style="color: #ff5b84;">code</i> Developing web applications</li>
+                            <li><i class="material-icons" style="color: #ff5b84;">explore</i> Exploring new technologies and frameworks</li>
+                            <li><i class="material-icons" style="color: #ff5b84;">emoji_events</i> Participating in Hack for Gov and coding competitions</li>
+                            <li><i class="material-icons" style="color: #ff5b84;">movie</i> Watching anime and Playing MLBB</li>
+                            <!-- <li><i class="material-icons" style="color: #ff5b84;">group</i> Contributing to open-source projects</li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <!-- Project section -->
+    <div class="container mt-5" id="project">
+
+        <h2 class="fw-bold text-white pb-3 text-center">Projects</h2>
+
+        <div class="row align-items-center project">
+            <div class="card_project hover">
+                <div class="card-img" style="background-image:url(public/images/intime.png);">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <a class="hover" target="_blank" href="https://stiigradebook.lovestoblog.com/">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <a href="#!">
+                        <h2 style="color: #3ebdf0;">Intime STII Grade Book (Capstone Project)</h2>
+                        <p style="color: white;">A comprehensive system for managing student grades and allowing students to take attendance using QR codes.</p>
+                    </a>
+                </div>
+
+
+            </div>
+
+            <!-- <div class="card_project">
+                <div class="card-img" style="background-image:url(https://images.unsplash.com/photo-1491374812364-00028bbe7d2f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a22e4862c36c552e726815949fbcb41a&auto=format&fit=crop&w=500&q=60);">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <a href="#!">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <a href="#!">
+                        <h2 style="color: #3ebdf0;">Title</h2>
+                        <p style="color: white;">Lorem ipsum dolor sit amet consectetur, lorem ipsum dolor</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card_project">
+                <div class="card-img" style="background-image:url(https://images.unsplash.com/photo-1519176336903-04be58a477d2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=eda05ddcb3154f39fd8ce88fdd44f531&auto=format&fit=crop&w=500&q=60);">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <a href="#!">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <a href="#!">
+                        <h2 style="color: #3ebdf0;">Title</h2>
+                        <p style="color: white;">Lorem ipsum dolor sit amet consectetur, lorem ipsum dolor</p>
+                    </a>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+</section>
+
+<section id="experience">
+    <!-- Experience  section-->
+    <div class="container mt-5" id="experience">
+
+        <div class="card-experience">
+            <div class="header">
+                <h2 class="fw-bold text-white pb-3 text-center">Relevant Experience</h2>
+
+            </div>
+            <div class="timeline">
+
+                <div class="timeline-month">
+                    2023 - 2025
+                    <span>3 Entries</span>
+                </div>
+
+                <div class="timeline-section">
+                    <div class="timeline-date">2023</div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="timeline-box">
+                                <div class="box-title">
+                                    <i class="fas fa-trophy text-warning"></i> Website Development Competition
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-item"><strong>Organizer:</strong> DICT</div>
+                                    <div class="box-item"><strong>Level:</strong> Institutional</div>
+                                    <div class="box-item"><strong>Achievement:</strong> 2nd Place</div>
+                                    <div class="box-item"><strong>Skills Used:</strong>Web Development Using WordPress</div>
+                                </div>
+                                <div class="box-footer">Team</div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="timeline-box">
+                                <div class="box-title">
+                                    <i class="fas fa-microphone text-info"></i> Website Development & Design
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-item"><strong>Organizer:</strong> Tesda</div>
+                                    <div class="box-item"><strong>Level:</strong> Institutional</div>
+                                    <div class="box-item"><strong>Achievement:</strong> 3nd Place</div>
+
+                                    <div class="box-item"><strong>Skills:</strong> Web Development, UI/UX Design</div>
+                                </div>
+                                <div class="box-footer"><strong>Participation:</strong> Solo</div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="timeline-box">
+                                <div class="box-title">
+                                    <i class="fas fa-microphone text-info"></i> HackForGov Cyber Challenge
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-item"><strong>Organizer:</strong> DICT</div>
+                                    <div class="box-item"><strong>Level:</strong> Institutional</div>
+                                    <div class="box-item"><strong>Team:</strong>Select</div>
+                                    <div class="box-item"><strong>Achievement:</strong> 2nd Place</div>
+                                    <div class="box-item"><strong>Skills Utilized:</strong> Cybersecurity, Cryptography, Ethical Hacking</div>
+                                </div>
+                                <div class="box-footer"><strong>Participation:</strong> Team</div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="timeline-box">
+                                <div class="box-title">
+                                    <i class="fas fa-microphone text-info"></i> Pitching Competition
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-item"><strong>Organizer:</strong> DICT</div>
+                                    <div class="box-item"><strong>Level:</strong> Regional</div>
+                                    <div class="box-item"><strong>Team Name:</strong> Power Meter</div>
+                                    <div class="box-item"><strong>Achievement:</strong> 1st Place</div>
+
+                                    <div class="box-item"><strong>Skills Utilized:</strong> Business Pitching, Market Research, Presentation</div>
+                                </div>
+                                <div class="box-footer"><strong>Participation:</strong> Team</div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="timeline-box">
+                                <div class="box-title">
+                                    <i class="fas fa-microphone text-info"></i>IDEYA Pitch Competition
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-item"><strong>Organizer:</strong> DICT</div>
+                                    <div class="box-item"><strong>Level:</strong> Regional</div>
+                                    <div class="box-item"><strong>Team Name:</strong> Power Meter</div>
+                                    <!-- <div class="box-item"><strong>Achievement:</strong> 1st Place</div> -->
+
+                                    <div class="box-item"><strong>Skills Utilized:</strong> Business Pitching, Market Research, Presentation</div>
+                                </div>
+                                <div class="box-footer"><strong>Participation:</strong> Team</div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="timeline-section">
+                    <div class="timeline-date">2024</div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="timeline-box">
+                                <div class="box-title">
+                                    <i class="fas fa-microphone text-info"></i> Startup Pitching Competition
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-item"><strong>Organizer:</strong> DICT </div>
+                                    <div class="box-item"><strong>Level:</strong> Institutional</div>
+                                    <div class="box-item"><strong>Team Name:</strong>ExpertSync</div>
+                                    <div class="box-item"><strong>Skills Utilized:</strong> Business Pitching, Market Research, Presentation</div>
+                                </div>
+                                <div class="box-footer"><strong>Participation:</strong> Team</div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="timeline-box">
+                                <div class="box-title">
+                                    <i class="fas fa-microphone text-info"></i>IDEYA Pitch Competition
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-item"><strong>Organizer:</strong> ZAMBASULTA</div>
+                                    <div class="box-item"><strong>Level:</strong> Regional</div>
+                                    <div class="box-item"><strong>Team Name:</strong> ExpertSync</div>
+                                    <!-- <div class="box-item"><strong>Achievement:</strong> 1st Place</div> -->
+
+                                    <div class="box-item"><strong>Skills Utilized:</strong> Business Pitching, Market Research, Presentation</div>
+                                </div>
+                                <div class="box-footer"><strong>Participation:</strong> Team</div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="timeline-section">
+                    <div class="timeline-date">2025</div>
+
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="timeline-box">
+                                <div class="box-title">
+                                    <i class="fas fa-qrcode text-danger"></i> Capstone Project
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-item"><strong>Organizer:</strong>STII</div>
+                                    <div class="box-item"><strong>Titile:</strong>Intime Stii GradeBook</div>
+
+                                    <div class="box-item"><strong>Project:</strong> QR Code-Based Attendance & Grading System</div>
+                                    <div class="box-item"><strong>Technology:</strong> PHP, MySQL, JavaScript</div>
+                                </div>
+                                <div class="box-footer">- Final Year Project</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="timeline-box">
+                                <div class="box-title">
+                                    <i class="fas fa-microphone text-info"></i>Incubation Program
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-item"><strong>Organizer:</strong> Azul Hub TIB</div>
+                                    <div class="box-item"><strong>Level:</strong> Regional</div>
+                                    <div class="box-item"><strong>Team Name:</strong> ExpertSync</div>
+                                    <!-- <div class="box-item"><strong>Achievement:</strong> 1st Place</div> -->
+
+                                    <div class="box-item"><strong>Skills Utilized:</strong> Business Pitching, Market Research, Presentation</div>
+                                </div>
+                                <div class="box-footer"><strong>Participation:</strong> Team</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="achievements">
+    <div class="container">
+        <div class="header">
+            <h2 class="fw-bold text-white  text-center">Certifications</h2>
+
+        </div>
+        <div class="carousel__container">
+            <div class="carousel-item">
+                <img
+                    class="carousel-item__img"
+                    src="public/images/1.png"
+                    alt="people" />
+
+            </div>
+            <div class="carousel-item">
+                <img
+                    class="carousel-item__img"
+                    src="public/images/2.png"
+                    alt="people" />
+
+            </div>
+            <div class="carousel-item">
+                <img
+                    class="carousel-item__img"
+                    src="public/images/3.png"
+                    alt="people" />
+
+            </div>
+            <div class="carousel-item">
+                <img
+                    class="carousel-item__img"
+                    src="public/images/4.png"
+                    alt="people" />
+
+            </div>
+            <div class="carousel-item">
+                <img
+                    class="carousel-item__img"
+                    src="public/images/5.png"
+                    alt="people" />
+
+            </div>
+            <div class="carousel-item">
+                <img
+                    class="carousel-item__img"
+                    src="public/images/6.png"
+                    alt="people" />
+
+            </div>
+            <div class="carousel-item">
+                <img
+                    class="carousel-item__img"
+                    src="public/images/7.png"
+                    alt="people" />
+
+            </div>
+            <div class="carousel-item">
+                <img
+                    class="carousel-item__img"
+                    src="public/images/8.png"
+                    alt="people" />
+
+            </div>
+            <div class="carousel-item">
+                <img
+                    class="carousel-item__img"
+                    src="public/images/9.png"
+                    alt="people" />
+
+            </div>
+            <div class="carousel-item">
+                <img
+                    class="carousel-item__img"
+                    src="public/images/10.png"
+                    alt="people" />
+
+            </div>
+            <div class="carousel-item">
+                <img
+                    class="carousel-item__img"
+                    src="public/images/11.png"
+                    alt="people" />
+
+            </div>
+            <div class="carousel-item">
+                <img
+                    class="carousel-item__img"
+                    src="public/images/12.png"
+                    alt="people" />
+
+            </div>
+            <div class="carousel-item">
+                <img
+                    class="carousel-item__img"
+                    src="public/images/13.png"
+                    alt="people" />
+
+            </div>
+            <div class="carousel-item">
+                <img
+                    class="carousel-item__img"
+                    src="public/images/14.png"
+                    alt="people" />
+
+            </div>
+            <div class="carousel-item">
+                <img
+                    class="carousel-item__img"
+                    src="public/images/15.png"
+                    alt="people" />
+
+            </div>
+            <div class="carousel-item">
+                <img
+                    class="carousel-item__img"
+                    src="public/images/16.png"
+                    alt="people" />
+
+            </div>
+            <div class="carousel-item">
+                <img
+                    class="carousel-item__img"
+                    src="public/images/17.png"
+                    alt="people" />
+
+            </div>
+            
+
+            
+
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="imageModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;">
+        <span id="closeModal" style="position:absolute; top:20px; right:30px; font-size:40px; color:white; cursor:pointer;">&times;</span>
+        <img id="modalImage" src="" alt="Modal Image" style="max-width:90%; max-height:90%;">
+    </div>
+
+    <script>
+        // Select all images
+        const images = document.querySelectorAll('.carousel-item__img');
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeBtn = document.getElementById('closeModal');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                modal.style.display = 'flex';
+                modalImg.src = img.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</section>
+
+
+
+
+<section id="contact" class="py-5" style="background-color: #0a1a22; color: #ffffff;">
+    <div class="container mt-5">
+        <h2 class="fw-bold text-white pb-3 text-center">Contact</h2>
+
+
+        <div class="row">
+            <!-- Left contact form -->
+            <div class="col-md-6" style="border-radius: 20px;padding: 10px;box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);background-color: rgba(83, 83, 83, 0.1);border: 1.5px solid rgba(255, 255, 255, 0.06);">
+                <form id="contact-form" class="form-horizontal" role="form">
+                    <div class="mb-3">
+                        <input type="text" class="form-control custom-placeholder text-white border-0" id="name" placeholder="NAME" name="name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="email" class="form-control custom-placeholder text-white border-0" id="email" placeholder="EMAIL" name="email" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <textarea class="form-control custom-placeholder text-white border-0" rows="5" placeholder="MESSAGE" name="message" required></textarea>
+                    </div>
+
+                    <button class="btn btn-primary w-100" id="submit" type="submit" value="SEND">
+                        <i class="fa fa-paper-plane"></i> <span>SEND</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Right contact details -->
+            <div class="col-md-6">
+                <div class="direct-contact-container">
+                    <ul class="list-unstyled">
+                        <li class="d-flex justify-content-start mb-3">
+                            <i class="fa fa-map-marker fa-2x me-3 " style="color: #00BCD4;"></i><span class="contact-text place">Ipil, Zamboanga Sibugay
+                                Philippines</span>
+                        </li>
+
+                        <li class="d-flex justify-content-start mb-3">
+                            <i class="fa fa-phone fa-2x me-3 " style="color: #00BCD4;"></i>
+                            <span class="contact-text phone">
+                                <a href="tel:1-212-555-5555" class="text-white text-decoration-none" title="Give me a call">09776029729</a>
+                            </span>
+                        </li>
+
+                        <li class="d-flex justify-content-start mb-3">
+                            <i class="fa fa-envelope fa-2x me-3 " style="color: #00BCD4;"></i>
+                            <span class="contact-text gmail">
+                                <a href="mailto:hitmeup@gmail.com" class="text-white text-decoration-none" title="Send me an email">lemeraiandave@gmail.com</a>
+                            </span>
+                        </li>
+                    </ul>
+
+                    <hr class="border-light">
+
+                    <!-- <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="#" target="_blank" class="contact-icon text-white">
+                <i class="fa fa-github fa-2x"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" target="_blank" class="contact-icon text-white">
+                <i class="fa fa-codepen fa-2x"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" target="_blank" class="contact-icon text-white">
+                <i class="fa fa-twitter fa-2x"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" target="_blank" class="contact-icon text-white">
+                <i class="fa fa-instagram fa-2x"></i>
+              </a>
+            </li>
+          </ul> -->
+
+                    <hr class="border-light">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        function activateNavLink() {
+            let scrollY = window.scrollY;
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - 120;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute("id");
+
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    navLinks.forEach((link) => {
+                        link.classList.remove("active");
+                        if (link.getAttribute("href") === `#${sectionId}`) {
+                            link.classList.add("active");
+                        }
+                    });
+                }
+            });
+        }
+
+        window.addEventListener("scroll", activateNavLink);
+    });
+
+
+    // CARD PROJECT ANIMATION
+
+    $(document).ready(function() {
+
+        $('.card').delay(1800).queue(function(next) {
+            $(this).removeClass('hover');
+            $('a.hover').removeClass('hover');
+            next();
+        });
+    });
+
+
+
+    // achievement
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const buttons = document.querySelectorAll(".category-btn");
+        const cards = document.querySelectorAll(".card");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                const category = button.getAttribute("data-category");
+
+                // Remove active class from all buttons
+                buttons.forEach(btn => btn.classList.remove("active"));
+                button.classList.add("active");
+
+                // Show or hide cards based on category php
+                cards.forEach(card => {
+                    if (category === "all" || card.getAttribute("data-category") === category) {
+                        card.style.display = "flex"; // Show matching cards
+                    } else {
+                        card.style.display = "none"; // Hide others
+                    }
+                });
+            });
+        });
+    });
+</script>
+</body>
+
+</html>
